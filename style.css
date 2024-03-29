@@ -1,10 +1,9 @@
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    >div>div{
-        margin: 30%;
-    }
+    margin:20%
 }
 
     /* 
@@ -22,6 +21,9 @@ body{
     the smaller the value, 
     the more noticeable the perspective will be
     */
+.transforms{
+    display: flex;
+}
 .test1{
     perspective:200px;
     div{
@@ -143,7 +145,22 @@ objects relative Z axis
 .bottom { background-color: #64dd17; 
     transform:rotateX(90deg) translateZ(100px)}
 
+/* Transitions below */
 
+.transition1-test>button{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:2% 5% 2% 5%;
+    background-color: white;
+    color: white;
+    transition: background-color 1s ease-out 0.25s;
+
+
+}
+.transition1-test>button:hover{
+    background-color: black;
+    cursor:pointer;
+}
 /* 
 Here are all the animations used throughout
 */
