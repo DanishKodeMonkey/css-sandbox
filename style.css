@@ -148,8 +148,8 @@ Here are all the animations used throughout
 */
 /* cube */
 @keyframes cubeRotate{
-    from{transform: rotateY(0deg) rotateX(720deg) rotateZ(0deg)}
-    to{transform: rotateY(360deg) rotateX(0deg) rotateZ(360deg)}
+    from{transform: rotateY(0deg) rotateX(720deg) rotateZ(0deg) translate3d(220px, -220px, 220px)}
+    to{transform: rotateY(360deg) rotateX(0deg) rotateZ(360deg) translate3d(-220px, 220px, -220px)}
 }
 /* test1 */
 @keyframes moveOnZ{
