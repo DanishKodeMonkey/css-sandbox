@@ -1,6 +1,5 @@
 body{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     >div>div{
@@ -127,6 +126,8 @@ objects relative Z axis
 */
 .front { 
     background-color: #d50000; 
+    text-align: center;
+    font-size: 150px;
     transform:translateZ(100px)
 }
 .back { background-color: #aa00ff; 
