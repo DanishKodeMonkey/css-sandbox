@@ -153,13 +153,16 @@ objects relative Z axis
     padding:2% 5% 2% 5%;
     background-color: white;
     color: white;
-    transition: background-color 1s ease-out 0.25s;
+    transition: 1s ease-out 0.25s;
 
 
 }
 .transition1-test>button:hover{
     background-color: black;
     cursor:pointer;
+    /* Keep in mind transforming during a transition
+    is a stacking context, not very performant */
+    transform:rotate(220deg);
 }
 /* 
 Here are all the animations used throughout
