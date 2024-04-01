@@ -3,7 +3,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin:20%;
+    margin:5%;
 
 }
 
@@ -182,19 +182,203 @@ objects relative Z axis
     width:300px
 }
 .ball {
+    font-size: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background: #c00;
     position: absolute;
     top: 0;
     left: 0;
     transition: transform 1s;
+    animation-duration: .2s;
+    animation-name: change-color;
+    animation-iteration-count: infinite;
+    animation-direction:alternate
+
+  }
+  /* animations course */
+  .animation1{
+    display: flex;
+    gap: 10px;
+
   }
   
+.balls1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 50%;
+
+}
+.ball1{
+   /* actual animation properties */
+   animation-duration: 2s;
+   animation-name:change-color;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+}
+.ball2{
+    /* actual animation properties */
+    animation-duration: 1s;
+    animation-name:change-color;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+ }
+ .ball3{
+    /* actual animation properties */
+    animation-duration: 2s;
+    animation-name:change-color;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+ }
+ .ball4{
+    /* shorthand notation */
+    animation: 2s change-color-and-size infinite alternate
+ }
+
+
+ /* Varying version of same animation
+ using custom CSS properties. */
+.bouncies{
+   display: flex;
+   border-bottom: 20px solid black;
+   margin-top: 20px;
+
+}
+.bouncy{
+    animation: bounce 300ms alternate infinite cubic-bezier(.2, .65, .6, 1)
+
+}
+.bouncy.one{
+    --bounce-offset: 20px;
+    animation-duration: 200ms;
+}
+.bouncy.two{
+    --bounce-offset:30px;
+    animation-duration: 300ms;
+}
+.bouncy.three{
+    --bounce-offset:40px;
+    animation-duration: 400ms;
+}
+.animations{
+    display: flex;
+    gap: 50px;
+    >.animation2{
+        display:flex;
+    }
+}
+
+ .slideinBox{
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+    font-size: 100px;
+    transform: rotateZ(90deg);
+    text-align: center;
+ }
+ .slidein{
+    animation-duration: 3s;
+    animation-name: slidein;
+    >p{margin: 0;}
+ }
+
+ .welcome-sign{
+    font-size: larger;
+    font-weight: 900;
+    width: 500px;
+    height: 50px;
+    background-color: silver;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    transform-origin: right;
+    
+
+ }
+ .slide-in-sign{
+    animation: slidein2 1000ms;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-fill-mode: forwards
+ }
+ .spinny{
+    width: 30px;
+    height:30px;
+    animation:spin 2000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+/* animation course */
+@keyframes change-color{
+    from{
+        background-color: red;
+
+    }
+    to{background-color: green;}
+}
+
+@keyframes change-color-and-size {
+    from{
+        background-color: green;
+
+    }
+    50%{
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+    to{
+        background-color: yellow;
+    }
+    
+}
+@keyframes bounce {
+from {transform: translateY(0px)}
+/* Using custom CSS properties and calc to create re-usable animations! */
+to{transform: translateY(calc(var(--bounce-offset) * -1));}    
+}
+@keyframes slidein {
+    from{
+        margin-left: 500%;
+        font-size: 0px;
+    }
+    75%{
+        font-size: 150px;
+        margin-left: 200;
+    }
+    to{
+        margin-left: 0%;
+    }   
+}
+@keyframes slidein2 {
+    from{transform: translateY(-200%) rotate(20deg);}
+    98%{ transform: rotate(-20deg)}
+    to{transform: translateY(0%) rotate(-20deg)}
+    
+}
+@keyframes spin {
+    0%{
+        transform:rotate(0turn)
+    }
+    25%{
+        transform: rotate(1turn) scale(1)
+    }
+    50%{
+        transform: rotate(1turn) scale(1.5);
+    }
+    75%{
+        transform: rotate(0turn) scale(1.5);
+    }
+    100%{
+        transform:rotate(0turn) scale(1);
+    }
+    
+}
 /* 
 Here are all the animations used throughout
 */
